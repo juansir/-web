@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<meta name="viewport" content="width=device-width,height=device-height,user-scalable=no" /></meta>-->
+		<link rel="stylesheet" href="css/gong.css" />
+	</head>
+	<script type="text/javascript">
+		window.onload = function(){
+			var g = document.querySelector("#gz");
+			var e = document.querySelector(".pg");
+			g.onmouseover = function(){
+				e.style.display = 'block';
+			}
+			g.onmouseout = function(){
+				e.style.display = '';
+			}
+			
+			var be = document.querySelector(".center_bottom");
+			be.onmouseover = function(){
+				be.style.background = "#e3e3e3"
+			}
+			be.onmouseout = function(){
+				be.style.background = ""
+			}
+		}
+	</script>
+	<body>
+		<!--header头部导航内容-->
+		<header class="head">
+			<div class="top">
+				<div class="left"><a href="#"><img src="img/logo.gif" /></a></div>
+				<div class="left">
+					<ul class="ul">
+						<li><a href="#">直播课程</a></li>
+						<li><a href="dianbo.html">点播课程</a></li>
+						<li><a href="mianshou.html">面授课程</a></li>
+					</ul>
+				</div>
+				<div class="right enter">
+					<a href="login.html">登录</a>
+					<span>|</span>
+					<a href="zhuce.html">注册</a>
+				</div>
+				<div class="right ship"><a href="gongkaike.html">公开课</a></div>
+				<div class="clear"></div>
+			</div>
+		</header>
+		
+		<!--右侧固定图标-->
+		<div class="total">
+		    <div class="right gud">
+		    	<a href="#" id="gz">公众号</a>
+				<a href="#">在线客服</a>
+				<a href="#"><span></span></a>
+		    </div>
+		    <div class="right pg">
+		    	<img src="img/number_code.png" /> 
+		    </div>
+		    <div class="clear"></div>
+		</div>
+		
+		<!--主体内容-->
+		<section>
+			<div class="img">
+				<img src="img/bg12261214.png" />
+				<div class="center_banner">
+					<div>
+						<ul>
+							<a href="#"><li style="background:#323339">往期回顾</li></a>
+							<a href="#"><li>最新课程</li></a>
+						</ul>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="center">
+				<div class="center_top">
+					<p>2017-02-10<span>周五</span></p>
+				</div>
+				<div class="center_bottom">
+					<span class="shijian">12:00-18:00</span>
+					<span class="ceshi">测试</span>
+					<span class="zhibo" style="color:#21a9ff;">直播完毕</span>
+					<a href="#">查看回顾</a>
+				</div>
+			</div>
+		</section>
+		
+		<!--footer底部内容-->
+		<footer class="footer">
+			<div class="footer_up">
+				<div class="foot_top">
+					<div class="left zuo">
+						<img src="img/footer_logo.png" /><br />
+						<p>精英吧是由北京才信教育科技有限公司创建并运营的在线教育平台，是国内唯一一家专注精品课程和学习效果考察的在线教育网站。</p>
+						<span>关注我们：</span>
+						<a href="#"><img /></a>
+						<a href="#"><img /></a>
+					</div>
+					<div class="left foot_nav">
+						<ul>
+							<li><p>帮助</p></li>
+							<li><a href="#">常见问题</a></li>
+							<li><a href="#">版权声明</a></li>
+							<li><a href="#">服务条款</a></li>
+						</ul>
+					</div>
+					<div class="left foot_nav">
+						<ul>
+							<li><p>现有课程</p></li>
+							<li><a href="#">HTML5</a></li>
+							<li><a href="#">Unity3D</a></li>
+							<li><a href="#">More>></a></li>
+						</ul>
+					</div>
+					<div class="left foot_nav">
+						<ul>
+							<li><p>反馈方式</p></li>
+							<li><a href="#">电子邮箱：help@jingyingba.com</a></li>
+							<li><a href="#">微信反馈：精英吧（ijingyingjia）</a></li>
+							<li><a href="#">微博反馈：才信教育</a></li>
+						</ul>
+					</div>
+					<div class="right koudai">
+						<ul>
+							<li><a href="#">口袋精英APP</a></li>
+							<li><a href="#">官方网站</a></li>
+							<li><a href="#"><span>机构入驻</span></a></li>
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="footer_down">
+				<div class="foot_down">
+					<span>才信教育&copy;2015-2017</span><a href="#">京ICP备16013954号</a>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

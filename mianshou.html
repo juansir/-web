@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<meta name="viewport" content="width=device-width,height=device-height,user-scalable=no" /></meta>-->
+		<link rel="stylesheet" href="css/layout.css" />
+	</head>
+	<script type="text/javascript">
+		window.onload = function(){
+			var wrap = document.getElementById("ul");
+			var y1 = document.querySelector(".yuan1");
+			var y2 = document.querySelector(".yuan2");
+			var y3 = document.querySelector(".yuan3");
+			var timer = setInterval(function(){
+				/*if(wrap.style.transitionDuration == "0s"){
+					wrap.style.transitionDuration = "0.5s";
+				}*/
+				var a = getComputedStyle(wrap,[]).left ;  
+				wrap.style.left = parseInt(a)-1200+'px';
+				if(parseInt(getComputedStyle(wrap,[]).left)<=-2400){
+					wrap.style.left = 0;
+					/*wrap.style.transitionDuration = "0s";*/
+				}
+				if(parseInt(getComputedStyle(wrap,[]).left)==-2400){
+					y3.style.opacity = 1;
+				}
+				else{
+					y3.style.opacity =0.5;
+				}
+				if(parseInt(getComputedStyle(wrap,[]).left)==0){
+					y2.style.opacity = 1;
+				}
+				else{
+					y2.style.opacity = 0.5;
+				}
+				if(parseInt(getComputedStyle(wrap,[]).left)==-1200){
+					y1.style.opacity = 1;
+				}
+				else{
+					y1.style.opacity = 0.5;
+				}				
+			},2000);
+			y3.onmouseover = function(){
+				y3.style.opacity = 1;
+				y1.style.opacity = 0.5;
+				y2.style.opacity = 0.5;
+				wrap.style.left = '0px';
+				s1.style.display = 'block';
+				s2.style.display = 'block';
+			}
+			y2.onmouseover = function(){
+				y2.style.opacity = 1;
+				y1.style.opacity = 0.5;
+				y3.style.opacity = 0.5;
+				wrap.style.left = '-1200px';
+				s1.style.display = 'block';
+				s2.style.display = 'block';
+			}
+			y1.onmouseover = function(){
+				y1.style.opacity = 1;
+				y3.style.opacity = 0.5;
+				y2.style.opacity = 0.5;
+				wrap.style.left = '-2400px';
+				s1.style.display = 'block';
+				s2.style.display = 'block';
+			}
+			
+			var s1 = document.querySelector(".span1");
+			var s2 = document.querySelector(".span2");
+			wrap.onmouseover = function(){
+				clearInterval(timer);
+				s1.style.display = 'block';
+				s2.style.display = 'block';
+				s1.onclick = function(){
+					var a = parseInt(getComputedStyle(wrap,[]).left);
+					if(a == 0){
+						wrap.style.left = a-2400+'px';
+						return;
+					}
+					else{
+						wrap.style.left = a+1200+'px';
+					}
+				}
+				s2.onclick = function(){
+					var a = parseInt(getComputedStyle(wrap,[]).left);
+					if(a == -2400){
+						wrap.style.left = 0;
+						return;
+					}
+					else{
+						wrap.style.left = a-1200+'px';
+					}
+				}
+			}
+			s1.onmouseover = function(){
+				clearInterval(timer);
+				s1.style.display = 'block';
+				s2.style.display = 'block';
+				s1.onclick = function(){
+					var a = parseInt(getComputedStyle(wrap,[]).left);
+					if(a == 0){
+						wrap.style.left = a-2400+'px';
+						return;
+					}
+					else{
+						wrap.style.left = a+1200+'px';
+					}
+				}
+				s2.onclick = function(){
+					var a = parseInt(getComputedStyle(wrap,[]).left);
+					if(a == -2400){
+						wrap.style.left = 0;
+						return;
+					}
+					else{
+						wrap.style.left = a-1200+'px';
+					}
+				}
+			}
+			s2.onmouseover = function(){
+				clearInterval(timer);
+				s1.style.display = 'block';
+				s2.style.display = 'block';
+				s1.onclick = function(){
+					var a = parseInt(getComputedStyle(wrap,[]).left);
+					if(a == 0){
+						wrap.style.left = a-2400+'px';
+						return;
+					}
+					else{
+						wrap.style.left = a+1200+'px';
+					}
+				}
+				s2.onclick = function(){
+					var a = parseInt(getComputedStyle(wrap,[]).left);
+					if(a == -2400){
+						wrap.style.left = 0;
+						return;
+					}
+					else{
+						wrap.style.left = a-1200+'px';
+					}
+				}
+			}
+			wrap.onmouseout = function(){
+				
+				timer = setInterval(function(){
+					/*if(wrap.style.transitionDuration == "0s"){
+						wrap.style.transitionDuration = "0.5s";
+					}*/
+					var a = getComputedStyle(wrap,[]).left ;  
+					wrap.style.left = parseInt(a)-1200+'px';
+					if(parseInt(getComputedStyle(wrap,[]).left)<=-2400){
+						wrap.style.left = 0;
+						/*wrap.style.transitionDuration = "0s";*/
+					}
+					if(parseInt(getComputedStyle(wrap,[]).left)==-2400){
+						y3.style.opacity = 1;
+					}
+					else{
+						y3.style.opacity =0.5;
+					}
+					if(parseInt(getComputedStyle(wrap,[]).left)==0){
+						y2.style.opacity = 1;
+					}
+					else{
+						y2.style.opacity = 0.5;
+					}
+					if(parseInt(getComputedStyle(wrap,[]).left)==-1200){
+						y1.style.opacity = 1;
+					}
+					else{
+						y1.style.opacity = 0.5;
+					}
+				},2000);
+				s1.style.display = 'none';
+				s2.style.display = 'none';
+			}
+			var g = document.querySelector("#gz");
+			var e = document.querySelector(".pg");
+			g.onmouseover = function(){
+				e.style.display = 'block';
+			}
+			g.onmouseout = function(){
+				e.style.display = '';
+			}
+		}
+	</script>
+	<body>
+		<!--header头部导航内容-->
+		<header class="head">
+			<div class="top">
+				<div class="left"><a href="#"><img src="img/logo.gif" /></a></div>
+				<div class="left">
+					<ul class="ul">
+						<li><a href="精英吧index.html">直播课程</a></li>
+						<li><a href="dianbo.html">点播课程</a></li>
+						<li><a href="#"><span>面授课程</span></a></li>
+					</ul>
+				</div>
+				<div class="right enter">
+					<a href="login.html">登录</a>
+					<span>|</span>
+					<a href="zhuce.html">注册</a>
+				</div>
+				<div class="right ship"><a href="gongkaike.html">公开课</a></div>
+				<div class="clear"></div>
+			</div>
+		</header>
+		
+		<!--右侧固定图标-->
+		<div class="total">
+		    <div class="right gud">
+		    	<a href="#" id="gz">公众号</a>
+				<a href="#">在线客服</a>
+				<a href="#"><span></span></a>
+		    </div>
+		    <div class="right pg">
+		    	<img src="img/number_code.png" /> 
+		    </div>
+		    <div class="clear"></div>
+		</div>
+		
+		<!--轮播动画内容-->
+		<div class="banner">
+			<ul id="ul">
+				<li><a href="#"><img src="img/banner1.jpg" /></a></li>
+				<li><a href="#"><img src="img/banner2.jpg" /></a></li>
+				<li><a href="#"><img src="img/banner3.jpg" /></a></li>
+			</ul>
+			<div class="span">
+				<span class="span1 left"><b></b></span>
+				<span class="span2 right"><b></b></span>
+				<div class="clear"></div>
+			</div>
+			<div>
+				<span class="yuan1"></span>
+				<span class="yuan2"></span>
+				<span class="yuan3"></span>
+			</div>
+		</div>
+		
+		<!--主体内容部分-->
+		<div class="content">
+			<div class="left left_nav">
+				<ul>
+					<li><a href="#" style="background-color: #fafafa; color:#fb6c03">全部<span></span></a></li>
+					<li><a href="#">iOS</a></li>
+					<li><a href="#">HTML5</a></li>
+					<li><a href="#">Unity-3D</a></li>
+					<li><a href="#">React Native</a></li>
+					<li><a href="#">产品经理</a></li>
+					<li><a href="#">Android</a></li>
+					<li><a href="#">Java</a></li>
+					<li><a href="#">PHP</a></li>
+					<li><a href="#">视觉设计</a></li>
+					<li><a href="#">运营</a></li>
+					<li><a href="#">3D打印</a></li>
+					<li><a href="#">测试</a></li>
+					<li><a href="#">Web</a></li>
+				</ul>
+			</div>
+			<div class="right content_right">
+				<div class="content_top">
+					<ul>
+						<li><a href="#">全部</a></li>
+						<li><a href="#">直播课程</a></li>
+						<li><a href="#">点播课程</a></li>
+						<li class="co"><a href="#">面授课程</a></li>
+					</ul>	
+				</div>
+				<div class="content_down">
+					<a href="#" class="bd">
+						<div class="img left"><img src="img/ch.jpg" /></div>
+						<div class="left txt">
+							<h3>Unity-3D进阶——有限状态机</h3>
+							<span>尚学堂</span>
+							<span>总课时：4个月</span>
+							<p>状态机是游戏开发必不可少的一种技术，不管是实现 AI 还是实现界面逻辑，使用状态机都可以大大简化我们的逻辑代码。本套课程我们从最简单的状态机开始，由浅入深地使用面向对象实现一个通用状态机，并且配有项目示例。</p>
+						</div>
+						<div class="right mon">
+							<i>￥200.00</i>
+						</div>
+						<div class="clear"></div>
+					</a>
+					<a href="#" class="bd">
+						<div class="img left"><img src="img/web.jpg" /></div>
+						<div class="left txt">
+							<h3>Unity-3D进阶——动画系统</h3>
+							<span>源码时代</span>
+							<span>总课时：4个月</span>
+							<p>本套课程中我们会深入学习Unity中的Mecanim动画系统。包括动画剪辑、动画控制器、动画状态机等相关知识，也会有人形动画、IK 动画、性能优化等内容。是一套非常全面且深入的动画教程。</p>
+						</div>
+						<div class="right mon">
+							<i>￥200.00</i>
+						</div>
+						<div class="clear"></div>
+					</a>
+					<a href="#" class="bd">
+						<div class="img left"><img src="img/Unity-3D.jpg" /></div>
+						<div class="left txt">
+							<h3>iOS从零基础到精通就业之UI基础</h3>
+							<span>炫游教育</span>
+							<span>总课时：4个月</span>
+							<p>C语言基础入门，面向零基础，毫无编程经验的学生群体，通过学习能够掌握C语言的基本语法,编程的基本概念,培养自己的编程思维!OC语言详解,掌握OC核心内容（面向对象、内存管理，类的扩展，KVC和KVO，闭包和常见的Foundation类库的使用方法等,为后续学习iOS SDK打好基础。涵盖UI框架大多数基础常用控件的使用,以及页面跳转,页面传值,可视化编程等项目开发中常用技术。</p>
+						</div>
+						<div class="right mon">
+							<i>￥200.00</i>
+						</div>
+						<div class="clear"></div>
+					</a>
+					<a href="#" class="bd">
+						<div class="img left"><img src="img/Unity-3D.jpg"  /></div>
+						<div class="left txt">
+							<h3>iOS从零基础到精通就业之UI基础</h3>
+							<span>完美教育</span>
+							<span>总课时：4个月</span>
+							<p>本课程主要是为了让行业外的同学了解当前整个游戏行业以及AR/VR行业的发展情况，和未来的发展方向，还有Unity在其中扮演的角色。</p>
+						</div>
+						<div class="right mon">
+							<i>￥200.00</i>
+						</div>
+						<div class="clear"></div>
+					</a>
+					<a href="#" class="bd">
+						<div class="img left"><img src="img/Unity-3D.jpg" /></div>
+						<div class="left txt">
+							<h3>ReactNative零基础入门到项目实战</h3>
+							<span>火星时代</span>
+							<span>总课时：4个月</span>
+							<p>本套视频教程从移动平台前端开发分析入手，知识结构层层推进，依次讲解React、React Native，手把手教你做React Native项目开发，同时苹果真机辅助教学，随时测试验证效果，确保开发进度和效果。</p>
+						</div>
+						<div class="right mon">
+							<i>￥200.00</i>
+						</div>
+						<div class="clear"></div>
+					</a>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		
+		<!--页码内容-->
+		<div class="ye">
+			<div class="right ipt">
+				<a href="#">首页</a>
+				<a href="#">上一页</a>
+				<a href="#">下一页</a>
+				<a href="#">尾页</a>
+				<a href="#">第<input type="text" value="1" />页</a>
+				<span>共7页</span>
+			</div>
+			<div class="clear"></div>
+		</div>
+		
+		<!--footer底部内容-->
+		<footer class="footer">
+			<div class="footer_up">
+				<div class="foot_top">
+					<div class="left zuo">
+						<img src="img/footer_logo.png" /><br />
+						<p>精英吧是由北京才信教育科技有限公司创建并运营的在线教育平台，是国内唯一一家专注精品课程和学习效果考察的在线教育网站。</p>
+						<span>关注我们：</span>
+						<a href="#"><img /></a>
+						<a href="#"><img /></a>
+					</div>
+					<div class="left foot_nav">
+						<ul>
+							<li><p>帮助</p></li>
+							<li><a href="#">常见问题</a></li>
+							<li><a href="#">版权声明</a></li>
+							<li><a href="#">服务条款</a></li>
+						</ul>
+					</div>
+					<div class="left foot_nav">
+						<ul>
+							<li><p>现有课程</p></li>
+							<li><a href="#">HTML5</a></li>
+							<li><a href="#">Unity3D</a></li>
+							<li><a href="#">More>></a></li>
+						</ul>
+					</div>
+					<div class="left foot_nav">
+						<ul>
+							<li><p>反馈方式</p></li>
+							<li><a href="#">电子邮箱：help@jingyingba.com</a></li>
+							<li><a href="#">微信反馈：精英吧（ijingyingjia）</a></li>
+							<li><a href="#">微博反馈：才信教育</a></li>
+						</ul>
+					</div>
+					<div class="right koudai">
+						<ul>
+							<li><a href="#">口袋精英APP</a></li>
+							<li><a href="#">官方网站</a></li>
+							<li><a href="#"><span>机构入驻</span></a></li>
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="footer_down">
+				<div class="foot_down">
+					<span>才信教育&copy;2015-2017</span><a href="#">京ICP备16013954号</a>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
